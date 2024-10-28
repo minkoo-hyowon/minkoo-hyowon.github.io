@@ -6,7 +6,7 @@
     <title>청첩장</title>
     <style>
         body {
-            font-family: 'Georgia', serif;
+            font-family: 'Roboto Serif', serif;
             background-color: #FAF3E0;
             color: #5B4636;
             margin: 0;
@@ -23,11 +23,9 @@
             position: relative;
         }
         .flower-border {
-            width: 100%;
-            max-width: 650px;
-            height: 250px;
-            background-image: url('https://github.com/Leehyowon/Leehyowon.github.io/blob/master/img/title_flower.jpg?raw=true');
-            background-size: cover;
+            width: 100%; /* 컨테이너 폭에 맞춤 */
+            height: auto; /* 가로에 맞춰 세로 자동 조정 */
+            max-width: 100%; /* 이미지 가로폭 조정 */
             margin: auto;
         }
         h1, h2 {
@@ -82,7 +80,8 @@
 <body>
     
     <div class="container">
-        <div class="flower-border"></div> <!-- 상단 능소화 장식 -->
+        <img class="flower-border" src="https://github.com/Leehyowon/Leehyowon.github.io/blob/master/img/title_flower.jpg?raw=true" alt="능소화 장식">
+        
         <h1>초대합니다</h1>
         <p class="info">
             저희 두 사람이 함께 새로운 시작을 하려고 합니다.<br>
@@ -147,15 +146,6 @@
     </div>
 
     <script>
-        // // 갤러리 이미지 클릭 시 확대 기능
-        // document.querySelectorAll('.gallery img').forEach(image => {
-        //     image.addEventListener('click', () => {
-        //         const src = image.src;
-        //         window.open(src, '_blank');
-        //     });
-        // });
-
-        // 계좌번호 복사 기능
         function copyToClipboard(text) {
             navigator.clipboard.writeText(text).then(() => {
                 alert("계좌번호가 복사되었습니다.");
@@ -166,5 +156,3 @@
     </script>
 </body>
 </html>
-
-            
