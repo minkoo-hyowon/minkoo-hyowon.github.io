@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -6,25 +7,35 @@
     <title>청첩장</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
+            font-family: 'Georgia', serif;
+            background-color: #FAF3E0;
+            color: #5B4636;
             margin: 0;
-            padding: 20px;
+            padding: 0;
             text-align: center;
-            color: #333;
         }
         .container {
             max-width: 600px;
             margin: auto;
-            background: #ffffff;
+            background: #FFFFFF;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             padding: 20px;
+            position: relative;
+        }
+        .flower-border {
+            width: 100%;
+            max-width: 600px;
+            height: 60px;
+            background-image: url('https://via.placeholder.com/600x60'); /* 실제 능소화 이미지 URL로 대체 */
+            background-size: cover;
+            margin: auto;
         }
         h1, h2 {
-            color: #4A90E2;
+            color: #D2691E;
+            font-weight: normal;
         }
-        .info {
+        .info, .directions, .account-info {
             margin: 20px 0;
             line-height: 1.6;
         }
@@ -33,8 +44,8 @@
             overflow-x: scroll;
             gap: 10px;
             padding: 10px;
-            border-top: 1px solid #ddd;
-            border-bottom: 1px solid #ddd;
+            border-top: 1px solid #E5E5E5;
+            border-bottom: 1px solid #E5E5E5;
         }
         .gallery img {
             max-width: 100%;
@@ -45,31 +56,21 @@
         .gallery img:hover {
             transform: scale(1.1);
         }
-        .invitation-text, .directions, .account-info {
-            margin: 20px 0;
-        }
-        .contact-info {
-            font-size: 0.9em;
-            color: #555;
-        }
-        .account-info p {
-            margin: 10px 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        .contact-info, .account-info p {
+            font-size: 1em;
         }
         .account-info button {
             margin-left: 10px;
             padding: 5px 10px;
             font-size: 0.8em;
             color: white;
-            background-color: #4A90E2;
+            background-color: #D2691E;
             border: none;
             border-radius: 5px;
             cursor: pointer;
         }
         .account-info button:hover {
-            background-color: #357ABD;
+            background-color: #C85A17;
         }
         iframe {
             width: 100%;
@@ -80,12 +81,20 @@
     </style>
 </head>
 <body>
+    <div class="flower-border"></div> <!-- 상단 능소화 장식 -->
+    
     <div class="container">
         <h1>초대합니다</h1>
         <p class="info">
             저희 두 사람이 함께 새로운 시작을 하려고 합니다.<br>
             소중한 자리에 귀한 걸음 해주시어<br>
             축복해 주시면 감사하겠습니다.
+        </p>
+
+        <h2>혼주 정보</h2>
+        <p class="info">
+            남길동 · 여길동의 장남 강길동<br>
+            남동길 · 여동길의 장녀 이동길
         </p>
 
         <div class="invitation-text">
@@ -105,7 +114,7 @@
             <img src="https://github.com/Leehyowon/Leehyowon.github.io/blob/master/img/6.jpg?raw=true" alt="이미지2">
             <img src="https://github.com/Leehyowon/Leehyowon.github.io/blob/master/img/7.jpg?raw=true" alt="이미지1">
             <img src="https://github.com/Leehyowon/Leehyowon.github.io/blob/master/img/8.jpg?raw=true" alt="이미지2">  
-            <img src="https://github.com/Leehyowon/Leehyowon.github.io/blob/master/img/9.jpg?raw=true" alt="이미지2">  
+            <img src="https://github.com/Leehyowon/Leehyowon.github.io/blob/master/img/9.jpg?raw=true" alt="이미지2"> 
         </div>
 
         <div class="account-info">
@@ -139,14 +148,16 @@
         </div>
     </div>
 
+    <div class="flower-border"></div> <!-- 하단 능소화 장식 -->
+
     <script>
-        // 갤러리 이미지 클릭 시 확대 기능
-        document.querySelectorAll('.gallery img').forEach(image => {
-            image.addEventListener('click', () => {
-                const src = image.src;
-                window.open(src, '_blank');
-            });
-        });
+        // // 갤러리 이미지 클릭 시 확대 기능
+        // document.querySelectorAll('.gallery img').forEach(image => {
+        //     image.addEventListener('click', () => {
+        //         const src = image.src;
+        //         window.open(src, '_blank');
+        //     });
+        // });
 
         // 계좌번호 복사 기능
         function copyToClipboard(text) {
@@ -160,16 +171,4 @@
 </body>
 </html>
 
-<!-- 
-        <div class="gallery" id="gallery">
-            <!-- 슬라이드 이미지들 -->
-            <img src="https://github.com/Leehyowon/Leehyowon.github.io/blob/master/img/1.jpg?raw=true" alt="이미지1">
-            <img src="https://github.com/Leehyowon/Leehyowon.github.io/blob/master/img/2.jpg?raw=true" alt="이미지2">
-            <img src="https://github.com/Leehyowon/Leehyowon.github.io/blob/master/img/3.jpg?raw=true" alt="이미지1">
-            <img src="https://github.com/Leehyowon/Leehyowon.github.io/blob/master/img/4.jpg?raw=true" alt="이미지2">
-            <img src="https://github.com/Leehyowon/Leehyowon.github.io/blob/master/img/5.jpg?raw=true" alt="이미지1">
-            <img src="https://github.com/Leehyowon/Leehyowon.github.io/blob/master/img/6.jpg?raw=true" alt="이미지2">
-            <img src="https://github.com/Leehyowon/Leehyowon.github.io/blob/master/img/7.jpg?raw=true" alt="이미지1">
-            <img src="https://github.com/Leehyowon/Leehyowon.github.io/blob/master/img/8.jpg?raw=true" alt="이미지2">  
-            <img src="https://github.com/Leehyowon/Leehyowon.github.io/blob/master/img/9.jpg?raw=true" alt="이미지2">  
-        </div> -->
+            
