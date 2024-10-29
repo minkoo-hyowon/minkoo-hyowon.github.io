@@ -86,9 +86,10 @@
             padding: 10px;
             text-align: left;
         }
-        .dropdown h3 {
+        .dropdown h2 {
             margin: 0;
             cursor: pointer;
+            tect-align: center;
         }
         .account-list {
             display: none;
@@ -144,30 +145,30 @@
 
         <div class="account-info">
             <div class="dropdown" onclick="toggleDropdown('groom-accounts')">
-                <h3>신랑 측 계좌번호 ▼</h3>
+                <h2>신랑 측 계좌번호 ▼</h2>
                 <div class="account-list" id="groom-accounts">
-                    <p>신랑 계좌: 123-456-789012 (신한은행)
+                    <p>우리 000-000-0000 ㅇㅇㅇ
                         <button class="copy-button" onclick="copyToClipboard('123-456-789012')">복사</button>
                     </p>
-                    <p>어머니 계좌: 234-567-890123 (국민은행)
+                    <p>신한 000-000-0000 ㅇㅇㅇ
                         <button class="copy-button" onclick="copyToClipboard('234-567-890123')">복사</button>
                     </p>
-                    <p>아버지 계좌: 345-678-901234 (우리은행)
+                    <p>농협</p> 000-000-0000 ㅇㅇㅇ
                         <button class="copy-button" onclick="copyToClipboard('345-678-901234')">복사</button>
                     </p>
                 </div>
             </div>
 
             <div class="dropdown" onclick="toggleDropdown('bride-accounts')">
-                <h3>신부 측 계좌번호 ▼</h3>
+                <h2>신부 측 계좌번호 ▼</h2>
                 <div class="account-list" id="bride-accounts">
-                    <p>신부 계좌: 456-789-012345 (기업은행)
+                    <p>우리 000-000-0000 ㅇㅇㅇ
                         <button class="copy-button" onclick="copyToClipboard('456-789-012345')">복사</button>
                     </p>
-                    <p>어머니 계좌: 567-890-123456 (농협은행)
+                    <p>신한 000-000-0000 ㅇㅇㅇ
                         <button class="copy-button" onclick="copyToClipboard('567-890-123456')">복사</button>
                     </p>
-                    <p>아버지 계좌: 678-901-234567 (하나은행)
+                    <p>농협</p> 000-000-0000 ㅇㅇㅇ
                         <button class="copy-button" onclick="copyToClipboard('678-901-234567')">복사</button>
                     </p>
                 </div>
@@ -175,14 +176,6 @@
     </div>
 
     <script>
-        // 계좌번호 복사 기능
-        // function copyToClipboard(text) {
-        //     navigator.clipboard.writeText(text).then(() => {
-        //         alert("계좌번호가 복사되었습니다.");
-        //     }).catch(() => {
-        //         alert("복사에 실패했습니다. 다시 시도해 주세요.");
-        //     });
-        // }
         function toggleDropdown(id) {
             const list = document.getElementById(id);
             list.style.display = list.style.display === 'block' ? 'none' : 'block';
