@@ -146,6 +146,8 @@
         </div>
         <p class="content">
             <img src="https://github.com/Leehyowon/Leehyowon.github.io/blob/master/img/txt_3.png?raw=true" alt="txt_3">
+
+<!-- Map -->
             <img src="https://github.com/Leehyowon/Leehyowon.github.io/blob/master/img/map_header.png?raw=true" alt="map_header">
             <iframe
               src="https://maps.google.com/maps?q=서울시 종로구 새문안로 79 새문안교회&hl=ko&z=16&output=embed"
@@ -164,41 +166,34 @@
             <img src="https://github.com/Leehyowon/Leehyowon.github.io/blob/master/img/map_dir.png?raw=true" alt="map_dir">
         </p>
 
+<!-- Account Information -->
         <p class="content">
             <img src="https://github.com/Leehyowon/Leehyowon.github.io/blob/master/img/account_header.png?raw=true" alt="account_header">
         </p>
-          <div class="account-info">
-            <div class="dropdown" onclick="toggleDropdown('groom-accounts')">
-                <img src="https://github.com/Leehyowon/Leehyowon.github.io/blob/master/img/account_broom.png?raw=true" alt="account_broom">
-                <div class="account-list" id="groom-accounts">
-                    <img src="https://github.com/Leehyowon/Leehyowon.github.io/blob/master/img/account_detail.png?raw=true" alt="account_detail" onclick="copyToClipboard('110-386-389614')">
-                    <img src="https://github.com/Leehyowon/Leehyowon.github.io/blob/master/img/account_detail.png?raw=true" alt="account_detail" onclick="copyToClipboard('110-386-389614')">
-                    <img src="https://github.com/Leehyowon/Leehyowon.github.io/blob/master/img/account_detail.png?raw=true" alt="account_detail" onclick="copyToClipboard('110-386-389614')">
-                </div>
+        <div class="account-info">
+          <div class="dropdown" onclick="toggleDropdown('groom-accounts')">
+            <img src="https://github.com/Leehyowon/Leehyowon.github.io/blob/master/img/account_broom.png?raw=true" alt="account_broom">
+            <div class="account-list" id="groom-accounts">
+              <img src="https://github.com/Leehyowon/Leehyowon.github.io/blob/master/img/account_detail.png?raw=true" alt="account_detail" onclick="copyToClipboard('110-386-389614')">
+              <img src="https://github.com/Leehyowon/Leehyowon.github.io/blob/master/img/account_detail.png?raw=true" alt="account_detail" onclick="copyToClipboard('110-386-389614')">
+              <img src="https://github.com/Leehyowon/Leehyowon.github.io/blob/master/img/account_detail.png?raw=true" alt="account_detail" onclick="copyToClipboard('110-386-389614')">
             </div>
-
-            <div class="dropdown" onclick="toggleDropdown('bride-accounts')">
-                <img src="https://github.com/Leehyowon/Leehyowon.github.io/blob/master/img/account_bride.png?raw=true" alt="account_bride">
-                <div class="account-list" id="bride-accounts">
-                    <p>우리 000-000-0000 ㅇㅇㅇ
-                        <button class="copy-button" onclick="copyToClipboard('456-789-012345')">복사</button>
-                    </p>
-                    <p>신한 000-000-0000 ㅇㅇㅇ
-                        <button class="copy-button" onclick="copyToClipboard('567-890-123456')">복사</button>
-                    </p>
-                    <p>농협</p> 000-000-0000 ㅇㅇㅇ
-                        <button class="copy-button" onclick="copyToClipboard('678-901-234567')">복사</button>
-                    </p>
-                </div>
+          </div>
+          <div class="dropdown" onclick="toggleDropdown('bride-accounts')">
+            <img src="https://github.com/Leehyowon/Leehyowon.github.io/blob/master/img/account_bride.png?raw=true" alt="account_bride">
+            <div class="account-list" id="bride-accounts">
+              <img src="https://github.com/Leehyowon/Leehyowon.github.io/blob/master/img/account_detail.png?raw=true" alt="account_detail" onclick="copyToClipboard('110-386-389614')">
+              <img src="https://github.com/Leehyowon/Leehyowon.github.io/blob/master/img/account_detail.png?raw=true" alt="account_detail" onclick="copyToClipboard('110-386-389614')">
+              <img src="https://github.com/Leehyowon/Leehyowon.github.io/blob/master/img/account_detail.png?raw=true" alt="account_detail" onclick="copyToClipboard('110-386-389614')">
             </div>
-    </div>
+          </div>
+        </div>
 
     <script>
         function toggleDropdown(id) {
             const list = document.getElementById(id);
             list.style.display = list.style.display === 'block' ? 'none' : 'block';
         }
-
         // 복사 기능
         function copyToClipboard(text) {
             navigator.clipboard.writeText(text).then(() => {
