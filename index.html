@@ -133,17 +133,43 @@
         .audio-player {
             margin-top: 20px;
         }
+        .audio-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            color: gray;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        .audio-icon:hover {
+            color: #333;
+        }
+        /* 음소거 아이콘 모양을 만들기 위한 스타일 */
+        .muted::before {
+            content: "🔇"; /* 음소거 상태 */
+        }
+        .unmuted::before {
+            content: "🔊"; /* 소리 켜짐 상태 */
+        }
     </style>
 </head>
 
 
   
 <body>
-    <div class="audio-player">
+<!--     <div class="audio-player">
         <audio controls autoplay loop>
             <source src="https://github.com/minkoo-hyowon/minkoo-hyowon.github.io/raw/refs/heads/master/bridal_chorus_wagner_piano.mp3" type="audio/mpeg">
         </audio>
-    </div>
+    </div> -->
+    <!-- 오디오 플레이어 (숨김 처리) -->
+    <audio id="background-audio" loop>
+        <source src="https://github.com/minkoo-hyowon/minkoo-hyowon.github.io/raw/refs/heads/master/bridal_chorus_wagner_piano.mp3" type="audio/mpeg">
+    </audio>
+    <!-- 오디오 컨트롤 아이콘 -->
+    <span class="audio-icon muted" id="audio-control"></span>
+
     <div class="container">
         <div class="gallery" id="gallery">
             <img src="https://github.com/minkoo-hyowon/minkoo-hyowon.github.io/blob/master/img/gallery_1.jpg?raw=true" alt="Green">
@@ -210,6 +236,19 @@
                 alert("복사에 실패했습니다. 다시 시도해 주세요.");
             });
         }
+        // 오디오 및 아이콘 제어
+        const audio = document.getElementById("background-audio");
+        const audioControl = document.getElementById("audio-control");
+
+        // 기본 음소거 상태 설정
+        audio.muted = true;
+
+        // 클릭 이벤트로 소리 on/off
+        audioControl.addEventListener("click", () => {
+            audio.muted = !audio.muted;
+            audioControl.classList.toggle("muted", audio.muted);
+            audioControl.classList.toggle("unmuted", !audio.muted);
+        });
     </script>
 </body>
 </html>
