@@ -31,10 +31,6 @@
             max-width: 100%;
             width: 600px;
         }
-        h1, h2 {
-            color: #D2691E;
-            font-weight: normal;
-        }
         .info, .directions, .account-info {
             margin: 20px 0;
             line-height: 1.6;
@@ -130,6 +126,111 @@
         .copy-button:hover {
             background: linear-gradient(to right, #bbb, #888);
         }
+            h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .message-card {
+      width: 280px;
+      height: 150px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 10px;
+      margin: 10px 0;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background-color: #f9f9f9;
+    }
+
+    .message-header {
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .message-body {
+      font-size: 14px;
+      margin-top: 5px;
+      word-wrap: break-word;
+    }
+
+    .message-date {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 12px;
+      color: #888;
+    }
+
+    .pagination {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    .page-numbers {
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .write-button {
+      font-size: 14px;
+      padding: 5px 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 300px;
+      padding: 20px;
+      background-color: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      z-index: 10;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .popup h2 {
+      margin-bottom: 10px;
+    }
+
+    .popup textarea {
+      width: 100%;
+      height: 80px;
+      margin-bottom: 10px;
+      padding: 5px;
+    }
+
+    .popup .submit-button {
+      font-size: 14px;
+      padding: 5px 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .popup .close-button {
+      font-size: 14px;
+      padding: 5px 10px;
+      background-color: #ccc;
+      color: black;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
     </style>
 </head>
 
@@ -189,6 +290,23 @@
           </div>
         </div>
 
+    <div class="container">
+      <h1>방명록</h1>
+    <div id="message-list"></div>
+
+    <div class="pagination">
+      <span id="page-numbers"></span>
+      <button class="write-button" onclick="openPopup()">작성하기</button>
+    </div>
+  </div>
+
+  <div class="popup" id="popup">
+    <h2>방명록</h2>
+    <input type="text" id="author" placeholder="작성자 이름" maxlength="10" />
+    <textarea id="message" placeholder="메시지를 작성하세요 (최대 100자)" maxlength="100"></textarea>
+    <button class="submit-button" onclick="submitMessage()">등록하기</button>
+    <button class="close-button" onclick="closePopup()">닫기</button>
+
     <script>
         function toggleDropdown(id) {
             const list = document.getElementById(id);
@@ -202,6 +320,77 @@
                 alert("복사에 실패했습니다. 다시 시도해 주세요.");
             });
         }
+        let messages = [];
+    const messagesPerPage = 5;
+    let currentPage = 1;
+
+    function renderMessages() {
+      const messageList = document.getElementById('message-list');
+      messageList.innerHTML = '';
+
+      const startIndex = (currentPage - 1) * messagesPerPage;
+      const endIndex = Math.min(startIndex + messagesPerPage, messages.length);
+
+      for (let i = startIndex; i < endIndex; i++) {
+        const message = messages[i];
+        const messageCard = document.createElement('div');
+        messageCard.className = 'message-card';
+        messageCard.innerHTML = `
+          <div class="message-header">${message.author}</div>
+          <div class="message-body">${message.content}</div>
+          <div class="message-date">${message.date}</div>
+        `;
+        messageList.appendChild(messageCard);
+      }
+
+      renderPagination();
+    }
+
+    function renderPagination() {
+      const pageNumbers = document.getElementById('page-numbers');
+      pageNumbers.innerHTML = '';
+      const totalPages = Math.ceil(messages.length / messagesPerPage);
+
+      for (let i = 1; i <= totalPages; i++) {
+        const pageNumber = document.createElement('span');
+        pageNumber.className = 'page-numbers';
+        pageNumber.innerText = i;
+        pageNumber.onclick = () => {
+          currentPage = i;
+          renderMessages();
+        };
+        if (i === currentPage) {
+          pageNumber.style.fontWeight = 'bold';
+        }
+        pageNumbers.appendChild(pageNumber);
+      }
+    }
+
+    function openPopup() {
+      document.getElementById('popup').style.display = 'block';
+    }
+
+    function closePopup() {
+      document.getElementById('popup').style.display = 'none';
+    }
+
+    function submitMessage() {
+      const author = document.getElementById('author').value.trim();
+      const content = document.getElementById('message').value.trim();
+      if (author && content) {
+        const date = new Date().toISOString().slice(0, 10).replace(/-/g, '.');
+        messages.unshift({ author, content, date });
+        closePopup();
+        document.getElementById('author').value = '';
+        document.getElementById('message').value = '';
+        currentPage = 1;
+        renderMessages();
+      } else {
+        alert('작성자와 메시지를 입력하세요.');
+      }
+    }
+
+    renderMessages();
     </script>
 </body>
 </html>
