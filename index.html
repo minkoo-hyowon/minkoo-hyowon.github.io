@@ -94,7 +94,11 @@
         .account-info {
             margin: 20px 0;
         }
+        .account-info img {
+            max-width: 100%
+        }
         .dropdown {
+            max-width: 80%
             margin: 10px 0;
 /*             background-color: #f5f5f5; */
             background: linear-gradient(to right, #ccc, #999);
@@ -165,9 +169,12 @@
             <img src="https://github.com/Leehyowon/Leehyowon.github.io/blob/master/img/map_dir.png?raw=true" alt="map_dir">
         </p>
 
-        <div class="account-info">
+        <p class="content">
+            <img src="https://github.com/Leehyowon/Leehyowon.github.io/blob/master/img/account_header.png?raw=true" alt="account_header">
+        </p>
+          <div class="account-info">
             <div class="dropdown" onclick="toggleDropdown('groom-accounts')">
-                <img src="https://github.com/Leehyowon/Leehyowon.github.io/blob/master/img/button_3.png?raw=true" alt="button_3">
+                <img src="https://github.com/Leehyowon/Leehyowon.github.io/blob/master/img/account_broom.png?raw=true" alt="account_broom">
                 <div class="account-list" id="groom-accounts">
                     <p>우리 000-000-0000 ㅇㅇㅇ
                         <button class="copy-button" onclick="copyToClipboard('123-456-789012')">복사</button>
@@ -182,7 +189,7 @@
             </div>
 
             <div class="dropdown" onclick="toggleDropdown('bride-accounts')">
-                <h4>신부 측 계좌번호 ▼</h4>
+                <img src="https://github.com/Leehyowon/Leehyowon.github.io/blob/master/img/account_bride.png?raw=true" alt="account_bride">
                 <div class="account-list" id="bride-accounts">
                     <p>우리 000-000-0000 ㅇㅇㅇ
                         <button class="copy-button" onclick="copyToClipboard('456-789-012345')">복사</button>
