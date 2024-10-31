@@ -133,45 +133,17 @@
         .audio-player {
             margin-top: 20px;
         }
-        .audio-icon {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            font-size: 24px;
-            color: gray;
-            cursor: pointer;
-            transition: color 0.3s ease;
-        }
-        .audio-icon.muted::before {
-            content: "🔇";
-        }
-        .audio-icon.unmuted::before {
-            content: "🔊";
-        }
     </style>
 </head>
 
 
   
 <body>
-    <!-- 숨겨진 오디오 플레이어 -->
-    <div class="audio-player" style="display: none;">
-        <audio id="background-audio" autoplay loop muted>
+    <div class="audio-player">
+        <audio controls autoplay loop>
             <source src="https://github.com/minkoo-hyowon/minkoo-hyowon.github.io/raw/refs/heads/master/bridal_chorus_wagner_piano.mp3" type="audio/mpeg">
         </audio>
     </div>
-
-    <div class="container">
-        <div class="gallery" id="gallery">
-            <!-- 음소거 아이콘 추가 -->
-            <span class="audio-icon muted" id="audio-control"></span>
-            
-            <img src="https://github.com/minkoo-hyowon/minkoo-hyowon.github.io/blob/master/img/gallery_1.jpg?raw=true" alt="Green">
-            <img src="https://github.com/minkoo-hyowon/minkoo-hyowon.github.io/blob/master/img/gallery_2.jpg?raw=true" alt="white">
-            <img src="https://github.com/minkoo-hyowon/minkoo-hyowon.github.io/blob/master/img/gallery_3.jpg?raw=true" alt="Hanok">
-            <img src="https://github.com/minkoo-hyowon/minkoo-hyowon.github.io/blob/master/img/gallery_4.jpg?raw=true" alt="Door">
-            <img src="https://github.com/minkoo-hyowon/minkoo-hyowon.github.io/blob/master/img/gallery_5.jpg?raw=true" alt="Green"> 
-        </div>
     <div class="container">
         <div class="gallery" id="gallery">
             <img src="https://github.com/minkoo-hyowon/minkoo-hyowon.github.io/blob/master/img/gallery_1.jpg?raw=true" alt="Green">
@@ -238,16 +210,6 @@
                 alert("복사에 실패했습니다. 다시 시도해 주세요.");
             });
         }
-        // 오디오 및 아이콘 제어
-        const audio = document.getElementById("background-audio");
-        const audioControl = document.getElementById("audio-control");
-
-        // 클릭 시 음소거 상태 토글
-        audioControl.addEventListener("click", () => {
-            audio.muted = !audio.muted;
-            audioControl.classList.toggle("muted", audio.muted);
-            audioControl.classList.toggle("unmuted", !audio.muted);
-        });
     </script>
 </body>
 </html>
