@@ -75,15 +75,16 @@
             gap: 10px;
         }
         .button {
-            width: 30%;
-            padding: 10px 0;
-            background-color: #e0e0e0;
-            border: none;
+            font-family: "Times New Roman", "Noto Serif", serif;
+            width: 50%;
+            padding: 0px 0;
+            background-color: #FFFFFF;
+            border: solid;
             border-radius: 5px;
             text-align: center;
             text-decoration: none;
-            color: black;
-            font-size: 14px;
+            color: #e0e0e0;
+            font-size: 20px;
         }
         .account-info {
             margin: 20px 0;
@@ -142,13 +143,6 @@
             <img src="https://github.com/Leehyowon/Leehyowon.github.io/blob/master/img/txt_3.png?raw=true" alt="txt_3">
             <img src="https://github.com/Leehyowon/Leehyowon.github.io/blob/master/img/txt_2.png?raw=true" alt="txt_2">
 
-            <button type='button' onclick='navi_public()'>
-              <i class='fa fa-pencil'>대중교통 길찾기</i> 
-            </button>
-            <button type='button' onclick='navi_car()'>
-              <i class='fa fa-pencil'>자가용 길찾기</i>
-            </button>
-
             <iframe
               src="https://maps.google.com/maps?q=서울시 종로구 새문안로 79 새문안교회&hl=ko&z=16&output=embed"
               allowfullscreen>
@@ -156,9 +150,8 @@
 
             <!-- Navigation buttons -->
             <div class="buttons">
-              <a class="button" href="https://map.naver.com/v5/search/%EC%83%88%EB%AC%B8%EC%95%88%EA%B5%90%ED%9A%8C?c=14127082.1570521,4521513.7572144,15,0,0,0,dh" target="_blank">네이버 지도</a>
-              <a class="button" href="https://m.map.kakao.com/actions/index?destination=37.570044,126.974847" target="_blank">카카오 내비</a>
-              <a class="button" href="tmap://route?goalx=126.974847&goaly=37.570044&goalname=%EC%83%88%EB%AC%B8%EC%95%88%EA%B5%90%ED%9A%8C" target="_blank">티맵</a>
+              <a class="button" href="https://map.naver.com/p/directions/-/14134634.036028,4518969.2129201,%EB%8C%80%ED%95%9C%EC%98%88%EC%88%98%EA%B5%90%EC%9E%A5%EB%A1%9C%ED%9A%8C%20%EC%83%88%EB%AC%B8%EC%95%88%EA%B5%90%ED%9A%8C,12090024,PLACE_POI/-/transit?c=15.00,0,0,0,dh" target="_blank">대중교통 길찾기</a>
+              <a class="button" href="https://map.naver.com/p/directions/-/14134634.036028,4518969.2129201,%EB%8C%80%ED%95%9C%EC%98%88%EC%88%98%EA%B5%90%EC%9E%A5%EB%A1%9C%ED%9A%8C%20%EC%83%88%EB%AC%B8%EC%95%88%EA%B5%90%ED%9A%8C,12090024,PLACE_POI/-/car?c=15.00,0,0,0,dh" target="_blank">자가용 길찾기</a>
             </div>
         </p>
 
@@ -207,15 +200,6 @@
             }).catch(() => {
                 alert("복사에 실패했습니다. 다시 시도해 주세요.");
             });
-        }
-
-        function navi_public(){
-          var loca = "https://map.naver.com/p/directions/-/14134634.036028,4518969.2129201,%EB%8C%80%ED%95%9C%EC%98%88%EC%88%98%EA%B5%90%EC%9E%A5%EB%A1%9C%ED%9A%8C%20%EC%83%88%EB%AC%B8%EC%95%88%EA%B5%90%ED%9A%8C,12090024,PLACE_POI/-/transit?c=15.00,0,0,0,dh"
-          window.location.href=loca;
-        }
-        function navi_car(){
-          var loca = "https://map.naver.com/p/directions/-/14134634.036028,4518969.2129201,%EB%8C%80%ED%95%9C%EC%98%88%EC%88%98%EA%B5%90%EC%9E%A5%EB%A1%9C%ED%9A%8C%20%EC%83%88%EB%AC%B8%EC%95%88%EA%B5%90%ED%9A%8C,12090024,PLACE_POI/-/car?c=15.00,0,0,0,dh"
-          window.location.href=loca;
         }
     </script>
 </body>
