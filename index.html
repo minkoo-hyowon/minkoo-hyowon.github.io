@@ -121,17 +121,13 @@
             <img src="https://github.com/Leehyowon/Leehyowon.github.io/blob/master/img/txt_3.png?raw=true" alt="txt_3">
             <img src="https://github.com/Leehyowon/Leehyowon.github.io/blob/master/img/txt_2.png?raw=true" alt="txt_2">
 
-            <button type='button' onclick='navigation()'>
-              <i class='fa fa-pencil'></i> 길찾기(NAVI)
+            <button type='button' onclick='navi_public()'>
+              <i class='fa fa-pencil'></i> 대중교통 길찾기
+            </button>
+            <button type='button' onclick='navi_car()'>
+              <i class='fa fa-pencil'></i> 자가용 길찾기
             </button>
         </p>
-<!--         <div class="directions">
-            <iframe
-                src="https://maps.google.com/maps?q=서울특별시 종로구 새문안로 79&hl=ko&z=16&output=embed"
-                src="https://www.google.com/maps/dir//%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C+%EC%A2%85%EB%A1%9C%EA%B5%AC+%EC%83%88%EB%AC%B8%EC%95%88%EB%A1%9C+79+%EC%83%88%EB%AC%B8%EC%95%88%EA%B5%90%ED%9A%8C/data=!4m8!4m7!1m0!1m5!1m1!1s0x357ca29305680533:0xced3a20b1b580d38!2m2!1d126.9735723!2d37.5706929?entry=ttu&g_ep=EgoyMDI0MTAyNy4wIKXMDSoASAFQAw%3D%3D&hl=ko&z=16&output=embed"
-                allowfullscreen>
-            </iframe>
-        </div> -->
 
         <div class="account-info">
             <div class="dropdown" onclick="toggleDropdown('groom-accounts')">
@@ -180,8 +176,12 @@
             });
         }
 
-        function navigation(){
-          var loca = "https://m.map.kakao.com/actions/routeView?startLoc=&sxEnc=&syEnc=&endLoc=%EC%83%88%EB%AC%B8%EC%95%88%EA%B5%90%ED%9A%8C&exEnc=LVRLRQ&eyEnc=QNMMUMR&ids=%2CP553818334&service="
+        function navi_public(){
+          var loca = "https://map.naver.com/p/directions/-/14134634.036028,4518969.2129201,%EB%8C%80%ED%95%9C%EC%98%88%EC%88%98%EA%B5%90%EC%9E%A5%EB%A1%9C%ED%9A%8C%20%EC%83%88%EB%AC%B8%EC%95%88%EA%B5%90%ED%9A%8C,12090024,PLACE_POI/-/transit?c=15.00,0,0,0,dh"
+          window.location.href=loca;
+        }
+        function navi_car(){
+          var loca = "https://map.naver.com/p/directions/-/14134634.036028,4518969.2129201,%EB%8C%80%ED%95%9C%EC%98%88%EC%88%98%EA%B5%90%EC%9E%A5%EB%A1%9C%ED%9A%8C%20%EC%83%88%EB%AC%B8%EC%95%88%EA%B5%90%ED%9A%8C,12090024,PLACE_POI/-/car?c=15.00,0,0,0,dh"
           window.location.href=loca;
         }
     </script>
