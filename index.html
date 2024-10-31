@@ -100,24 +100,19 @@
         .dropdown {
             max-width: 80%
             margin: 10px 0;
-/*             background-color: #f5f5f5; */
-            background: linear-gradient(to right, #ccc, #999);
-            border: 0.5px solid #ccc;
-            border-radius: 5px;
             padding: 10px;
-            text-align: center;
         }
         .dropdown img {
             max-width: 80%
             margin: 0;
             cursor: pointer;
-            tect-align: center;
         }
         .account-list {
             display: none;
             padding: 10px 0;
         }
-        .account-list p {
+        .account-list img {
+            max-width: 100%;
             margin: 5px 0;
             display: flex;
             justify-content: space-between;
@@ -176,15 +171,9 @@
             <div class="dropdown" onclick="toggleDropdown('groom-accounts')">
                 <img src="https://github.com/Leehyowon/Leehyowon.github.io/blob/master/img/account_broom.png?raw=true" alt="account_broom">
                 <div class="account-list" id="groom-accounts">
-                    <p>우리 000-000-0000 ㅇㅇㅇ
-                        <button class="copy-button" onclick="copyToClipboard('123-456-789012')">복사</button>
-                    </p>
-                    <p>신한 000-000-0000 ㅇㅇㅇ
-                        <button class="copy-button" onclick="copyToClipboard('234-567-890123')">복사</button>
-                    </p>
-                    <p>농협</p> 000-000-0000 ㅇㅇㅇ
-                        <button class="copy-button" onclick="copyToClipboard('345-678-901234')">복사</button>
-                    </p>
+                    <img src="https://github.com/Leehyowon/Leehyowon.github.io/blob/master/img/account_detail.png?raw=true" alt="account_detail" onclick="copyToClipboard('110-386-389614')">
+                    <img src="https://github.com/Leehyowon/Leehyowon.github.io/blob/master/img/account_detail.png?raw=true" alt="account_detail" onclick="copyToClipboard('110-386-389614')">
+                    <img src="https://github.com/Leehyowon/Leehyowon.github.io/blob/master/img/account_detail.png?raw=true" alt="account_detail" onclick="copyToClipboard('110-386-389614')">
                 </div>
             </div>
 
