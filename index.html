@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>강민구 ♡ 이효원 결혼합니다!</title>
     <style>
         body {
@@ -87,9 +87,9 @@
             font-size: 20px;
         }
         .button img {
-          width: 100%;
-          max-width: 280px;
-          height: auto;
+            width: 100%;
+            max-width: 280px;
+            height: auto;
         }
         .account-info {
             margin: 20px 0;
@@ -98,12 +98,12 @@
             max-width: 100%
         }
         .dropdown {
-            max-width: 80%
+            max-width: 80%;
             margin: 10px 0;
             padding: 10px;
         }
         .dropdown img {
-            max-width: 80%
+            max-width: 80%;
             margin: 0;
             cursor: pointer;
         }
@@ -133,8 +133,6 @@
     </style>
 </head>
 
-
-  
 <body>
     <div class="container">
         <div class="gallery" id="gallery">
@@ -146,8 +144,6 @@
         </div>
         <p class="content">
             <img src="https://github.com/minkoo-hyowon/minkoo-hyowon.github.io/blob/master/img/context_1.png?raw=true" alt="txt_3">
-
-<!-- Map -->
             <img src="https://github.com/minkoo-hyowon/minkoo-hyowon.github.io/blob/master/img/context_2.png?raw=true" alt="map_header">
             <iframe
               src="https://maps.google.com/maps?q=서울시 종로구 새문안로 79 새문안교회&hl=ko&z=16&output=embed"
@@ -166,7 +162,6 @@
             <img src="https://github.com/minkoo-hyowon/minkoo-hyowon.github.io/blob/master/img/content_3_2.png?raw=true" alt="map_dir">
         </p>
 
-<!-- Account Information -->
         <p class="content">
             <img src="https://github.com/minkoo-hyowon/minkoo-hyowon.github.io/blob/master/img/account_header1.png?raw=true" alt="account_header1">
         </p>
@@ -175,33 +170,4 @@
             <img src="https://github.com/minkoo-hyowon/minkoo-hyowon.github.io/blob/master/img/account_broom.png?raw=true" alt="account_broom">
             <div class="account-list" id="groom-accounts">
               <img src="https://github.com/minkoo-hyowon/minkoo-hyowon.github.io/blob/master/img/account_detail3.png?raw=true" alt="account_detail3" onclick="copyToClipboard('1002-762-171845')">
-              <img src="https://github.com/minkoo-hyowon/minkoo-hyowon.github.io/blob/master/img/account_detail1.png?raw=true" alt="account_detail1" onclick="copyToClipboard('110-386-389614')">
-              <img src="https://github.com/minkoo-hyowon/minkoo-hyowon.github.io/blob/master/img/account_detail3.png?raw=true" alt="account_detail3" onclick="copyToClipboard('1002-762-171845')">
-            </div>
-          </div>
-          <div class="dropdown" onclick="toggleDropdown('bride-accounts')">
-            <img src="https://github.com/minkoo-hyowon/minkoo-hyowon.github.io/blob/master/img/account_bride.png?raw=true" alt="account_bride">
-            <div class="account-list" id="bride-accounts">
-              <img src="https://github.com/minkoo-hyowon/minkoo-hyowon.github.io/blob/master/img/account_detail2.png?raw=true" alt="account_detail2" onclick="copyToClipboard('1002-5434-4612')">
-              <img src="https://github.com/minkoo-hyowon/minkoo-hyowon.github.io/blob/master/img/account_detail4.png?raw=true" alt="account_detail4" onclick="copyToClipboard('233040-56-035095')">
-              <img src="https://github.com/minkoo-hyowon/minkoo-hyowon.github.io/blob/master/img/account_detail2.png?raw=true" alt="account_detail2" onclick="copyToClipboard('1002-5434-4612')">
-            </div>
-          </div>
-        </div>
-
-    <script>
-        function toggleDropdown(id) {
-            const list = document.getElementById(id);
-            list.style.display = list.style.display === 'block' ? 'none' : 'block';
-        }
-        // 복사 기능
-        function copyToClipboard(text) {
-            navigator.clipboard.writeText(text).then(() => {
-                alert("계좌 번호가 복사 되었습니다.");
-            }).catch(() => {
-                alert("복사에 실패했습니다. 다시 시도해 주세요.");
-            });
-        }
-    </script>
-</body>
-</html>
+              <img src="https://github.com/minkoo-hyowon/minkoo-hyowon.github.io/blob/master/img/account_detail1.png?raw=true" alt="account_detail1" onclick="copyToClipboard('110-386-389614
